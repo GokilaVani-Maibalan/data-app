@@ -1,38 +1,125 @@
 .App {
   text-align: center;
+  background-color: rgb(185, 232, 252)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer{
+  border: 1px solid black;
+  width: 100%;
+  background-color: black;
+  color:white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content{
+ height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ margin: 1vh
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.basic{
+  padding:10px;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: aqua;
+}
+
+.nav-styles{
+  padding:5px;
+  background-color: blueviolet;
+}
+
+.user-content{
+display:flex;
+flex-wrap: wrap;
+gap: 1rem;
+justify-content: space-around;
+padding: 10px;
+margin:5px;
+}
+
+.user-card{
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  height: 250px;
+  width: 250px;
+  border-radius: 5px;
+  padding: 5px;
+  background-image : linear-gradient(rgb(247, 167, 247),rgb(248, 211, 217));
+}
+
+.btn-edit, .btn-del, .btn-view{
+padding: 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-edit:hover{
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-del:hover{
+  background-color: red;
+  color: whitekl;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-view:hover{
+  background-color: rgb(140, 252, 252);
+  color:black;
+}
+
+input{
+border: 1px solid balck;
+border-radius: 7px;;
+}
+
+.add{
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+label{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.nav-styles{
+display: flex;
+justify-content: flex-end;
+padding: 20px;
+margin:5px;
+gap: 15px;
+}
+
+.nav-button{
+padding: 10px;
+font-family: 'Courier New', Courier, monospace;
+font-weight: bold;
+border-radius: 10px;
+}
+
+.db-button{
+  padding: 10px;
+font-family: 'Courier New', Courier, monospace;
+font-weight: bold;
+border-radius: 10px;
+}
+
+.head{
+  padding: 20px;
+  background-color: pink;
+  color: white;
+  margin: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: x-large;
 }
