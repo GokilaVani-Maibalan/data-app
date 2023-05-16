@@ -18,6 +18,11 @@ const Base = function ({name,title,children}){
            >Dashboard
            </button>
            </span>
+
+           <span>
+           <button className="hk-button" onClick={()=>history.push('/hooks')}> Hooks
+           </button>
+           </span>
         </div>
 
         <div className='head'>{title}</div>
@@ -32,3 +37,4 @@ const Base = function ({name,title,children}){
 }
 
 export default Base;
+

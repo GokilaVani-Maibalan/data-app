@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Base from '../Core/base';
+import { Button, TextField } from '@mui/material';
 
 const EditUser = ({user,setUser}) => {
     
@@ -53,13 +54,48 @@ const history = useHistory();
   return (
     <Base
      title='Edit User'>
-      <div className="form">
+     <div className="form">
+
+     {/* 
        <label>Id</label> {' '}
        <input type='text' placeholder="ID" value={idx}
        onChange={(event)=>(setIdx(event.target.value))}
-       required/>
+       required/>*/}
 
-       <label>NAME</label>{' '}
+       <TextField fullWidth id="fullWidth"
+       label="ID" 
+       variant="outlined"
+       value={idx}
+       onChange={(event)=>(setIdx(event.target.value))} />
+
+       <TextField fullWidth id="fullWidth"
+            label="name" 
+            variant="outlined"
+            value={name} 
+            onChange={(event)=>(setName(event.target.value))} />
+
+        <TextField fullWidth id="fullWidth"
+            label="batch" 
+            variant="outlined"
+            value={batch} 
+            onChange={(event)=>(setBatch(event.target.value))}/>
+
+        <TextField fullWidth id="fullWidth"
+            label="email address" 
+            variant="outlined"
+            value={email} 
+            onChange={(event)=>(setEmail(event.target.value))}/>
+
+        <TextField fullWidth id="fullWidth"
+            label="experience" 
+            variant="outlined"
+            value={exp}
+            onChange={(event)=>(setExp(event.target.value))}/>
+
+        <Button variant="contained" color="secondary"
+            onClick = {updateUser}>Edit</Button>
+
+       {/*<label>NAME</label>{' '}
        <input type='text' placeholder="name" value={name} 
        onChange={(event)=>(setName(event.target.value))}
        required/>
@@ -80,7 +116,8 @@ const history = useHistory();
        required/><br></br><br></br>
 
        <button className="edit"
-       onClick={updateUser}>Edit</button>
+       onClick={updateUser}>Edit</button> */}
+
         
       </div>
    </Base>

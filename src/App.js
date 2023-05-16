@@ -7,6 +7,7 @@ import {data} from './Data/data'
 import NoPage from './Components/noPage';
 import UserDetails from './Components/userDetails';
 import EditUser from './Components/editUser';
+import Hook from './Components/hook';
 
 function App() {
 
@@ -45,7 +46,9 @@ function App() {
          setUser = {setUser}/>
        </Route>
 
-       
+       <Route path="/hooks">
+        <Hook />
+       </Route>
          {/* if no page*/}
        <Route path="**">
           <NoPage />
