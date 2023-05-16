@@ -1,75 +1,55 @@
-import React ,{ useState} from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import './App.css';
-import AddUser from './Components/addUser';
-import UserComponent from './Components/userComponent';
-import {data} from './Data/data'
-import NoPage from './Components/noPage';
-import UserDetails from './Components/userDetails';
-import EditUser from './Components/editUser';
-import Hook from './Components/hook';
+import React, { useState } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import "./App.css";
+import AddUser from "./Components/addUser";
+import UserComponent from "./Components/userComponent";
+import { data } from "./Data/data";
+import NoPage from "./Components/noPage";
+import UserDetails from "./Components/userDetails";
+import EditUser from "./Components/editUser";
 
 function App() {
-
-  const [user,setUser] = useState(data)
+  const [user, setUser] = useState(data);
 
   return (
     <div className="App">
-        
       <Switch>
+        {/* exact path : first path when page is rendered */}
+        <Route exact path="/">
+          <UserComponent user={user} setUser={setUser} />
+        </Route>
 
-      {/* exact path : first path when page is rendered */}
-       <Route exact path="/">
-         <UserComponent 
-           user={user}
-           setUser={setUser}/>
-       </Route>
+        <Route path="/add/user">
+          <AddUser user={user} setUser={setUser} />
+        </Route>
 
-       <Route path="/add/user">
-         <AddUser 
-         user={user}
-         setUser={setUser}/>
-       </Route>
+        <Route path="/user/:id">
+          <UserDetails user={user} />
+        </Route>
 
-       <Route path="/user/:id">
-          <UserDetails 
-            user={user}/>
-       </Route>
+        <Route path="/student">
+          <Redirect path="/" />
+        </Route>
 
-       <Route path="/student">
-          <Redirect path='/' />
-       </Route>
+        <Route path="/edit/:id">
+          <EditUser user={user} setUser={setUser} />
+        </Route>
 
-       <Route path='/edit/:id'>
-         <EditUser 
-         user = {user}
-         setUser = {setUser}/>
-       </Route>
-
-       <Route path="/hooks">
-        <Hook />
-       </Route>
-         {/* if no page*/}
-       <Route path="**">
+        {/* if no page*/}
+        <Route path="**">
           <NoPage />
-       </Route>
-
-      
+        </Route>
       </Switch>
-
-     
-       
     </div>
   );
 }
 
 export default App;
 
-
 // children concept
 // function NewComp(){
 //   return(
-//     <Base 
+//     <Base
 //     title = "Hello">
 //     Hello World!!!
 //     </Base>
